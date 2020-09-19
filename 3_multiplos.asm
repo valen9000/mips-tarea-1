@@ -6,7 +6,7 @@ salto: .asciiz "\n"	#Salto de Linea
 main:
 	li $t0, 1                        #Declaro el inicio
 	li $s0, 101                      #Declaro el final
-#-----------------------------------------------------------------------------------------------------------
+#-----
 verificar:                         #Codigo para verificar si t0 es mutliplo de 3 o 5
 	beq $t0, $s0, exit               #Pregunto si mi variable inicial es igual a mi variable final (si es, finalizo)
 	rem $t1, $t0, 5                  #Si no se cumple lo anterior, hago t0 % 5 y lo guardo en t1
@@ -18,7 +18,7 @@ verificar:                         #Codigo para verificar si t0 es mutliplo de 3
 	addi $t0, $t0, 1                 #t0++
 
 	j verificar                      #Volver a verificar
-#-----------------------------------------------------------------------------------------------------------
+#-----
 multiplos:                         #Codigo para imprimir t0
 	li $v0, 1                        #Preparo para imprimir entero
 	add $a0, $t0, $zero              #a0 = t0
@@ -31,7 +31,7 @@ multiplos:                         #Codigo para imprimir t0
 	addi $t0, $t0, 1                 #t0++
 
 	j verificar                      #Volver a verificar
-#-----------------------------------------------------------------------------------------------------------
+#-----
 #Finalizo el programa
 exit:
 	li $v0, 10
